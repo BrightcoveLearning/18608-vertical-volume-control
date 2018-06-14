@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Vertical Volume Control</title>
+</head>
+
+<body>
+  <!-- Player embed code with an id attribute. Also, the data-account, data-player and data-video-id attributes have been removed -->
+  <video id="myPlayerID"
+     data-embed="default"
+     data-application-id
+     class="video-js"
+     width="640" height="360"
+     controls></video>
+  <script src="//players.brightcove.net/1752604059001/default_default/index.min.js"></script>
+
+  <script type="text/javascript">
+
+    // +++ Define the player options +++
+    var options = {
+      controlBar: {
+        volumePanel: {
+          inline: false,
+          vertical: true
+        }
+      }
+    };
+
+    // +++ Add the player attributes +++
+    myPlayerID.setAttribute('data-account', 1752604059001);
+    myPlayerID.setAttribute('data-player', 'default');
+    myPlayerID.setAttribute('data-video-id', 5701202551001);
+    // +++ Create the player +++
+    bc("myPlayerID", options);
+
+  </script>
+
+</body>
+</html>
